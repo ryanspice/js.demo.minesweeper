@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>Minesweeper</title>
+
+        <link type="text/css" rel="stylesheet" href="./css/style.css" />
+
+        <script defer type="text/javascript" src="js/minesweeper.js" ></script>
+
+    </head>
+
+    <body >
+
+        <h1> Minesweeper </h1>
+        <h4>by Ryan Spice</h4>
+
+		<!-- -->
+		<span id="msgLost">
+			<h3 style="text-align:center;color:red;"> You've Lost! </h3>
+			<h4 style="text-align:center;"> <a href="#" onclick="Game.handleStartGame();">RESTART</a> </h4>
+		</span>
+		<!-- -->
+		<span id="msgWon">
+			<h3 style="text-align:center;color:blue;"> Congratulations you won in <span id="timewon">0</span> seconds! </h3>
+			<h4 style="text-align:center;"> <a href="#" onclick="Game.handleStartGame();">RESTART</a> </h4>
+		</span>
+
+		<div>
+            <select id="difficulty" onchange="Game.handleSetDifficulty(event)">
+               <option value="0">Easy</option>
+               <option value="1">Medium</option>
+               <option value="2">Hard</option>
+            </select>
+
+            <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+            <span>Remaining Mines:</span>
+            <span id="flagCount" > </span>
+            <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+            <span>Time:</span>
+            <span id="timer" > </span>
+            <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+        </div>
+
+        <div id="smiley" class="smiley" onmousedown="smileyDown();" onmouseup="smileyUp();" onclick="Game.handleStartGame();"></div>
+
+        <div id="minefield" onmousedown="smileyLimbo();" onmouseup="smileyLimboRemove();"></div>
+
+    </body>
+
+</html>
